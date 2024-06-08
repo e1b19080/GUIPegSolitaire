@@ -17,7 +17,7 @@ import javax.swing.SpinnerNumberModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-class DetermineBoard extends JFrame{
+class determineBoard extends JFrame{
 
     JSpinner spinc = new JSpinner();
     JSpinner spinr = new JSpinner();
@@ -35,7 +35,7 @@ class DetermineBoard extends JFrame{
         }
     }
 
-    DetermineBoard(){
+    determineBoard(){
         SpinnerModel modelc = new SpinnerNumberModel(3,1,9,1);
         SpinnerModel modelr = new SpinnerNumberModel(3,1,9,1);
         spinc.setModel(modelc);
@@ -94,7 +94,7 @@ class mainPage extends JFrame{
         label.setPreferredSize(new Dimension(220,40));
         JButton button1 = new JButton("あそぶ！");
         button1.setPreferredSize(new Dimension(220,40));
-        JButton button2 = new JButton("こたえ！");
+        JButton button2 = new JButton("じどう！");
         button2.setPreferredSize(new Dimension(220,40));
 
         button1.addActionListener(new ActionListener(){
@@ -104,7 +104,8 @@ class mainPage extends JFrame{
         });
         button2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                label.setText("自分で考えろ");
+               new determineBoard(); 
+                setVisible(false);
             }
         });
 
@@ -126,8 +127,7 @@ class mainPage extends JFrame{
 
 
     public static void main(String[] args){
-        //new mainPage();
-        new DetermineBoard();
+        new mainPage();
     }
 
 }
